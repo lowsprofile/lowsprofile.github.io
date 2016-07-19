@@ -94,10 +94,15 @@
         }
         var pid = getParameterByName('pid')
           , show = new showdown.Converter()
-        $.get("/posts/" + pid + ".md", function(res) {
-          $("#markdown").append(show.makeHtml(res))
-          $("#breadcrumb").append($("h1").first().text())
-        })
+          
+        if (pid == null){
+          $.get("/posts/" + pid + ".md", function(res) {
+            $("#markdown").append(show.makeHtml(res))
+            $("#breadcrumb").append($("h1").first().text())
+          })
+        } else {
+          $("#markdown").html("Not Found 404!")
+        }
       })
     </script>
   </body>
