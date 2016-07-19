@@ -95,7 +95,7 @@
         var pid = getParameterByName('pid')
           , show = new showdown.Converter()
           
-        if (pid == null){
+        if (pid == !null){
           $.get("/posts/" + pid + ".md", function(res) {
             $("#markdown").append(show.makeHtml(res))
             $("#breadcrumb").append($("h1").first().text())
