@@ -96,7 +96,7 @@
           , show = new showdown.Converter()
           
         if (pid == null){
-          $("#markdown").html("Not Found 404!")
+          $("#markdown").html(show.makeHtml("# Not Found 404!"))
         } else {
           $.get("/posts/" + pid + ".md", function(res) {
             $("#markdown").append(show.makeHtml(res))
