@@ -98,14 +98,13 @@
         if (pid == null){
           $("#markdown").html(show.makeHtml("# Not Found 404!"))
         } else {
-          try {
-            $.get("/posts/" + pid + ".md", function(res) {
-              $("#markdown").append(show.makeHtml(res))
-              $("#breadcrumb").append($("h1").first().text())
-          }
-          catch (err) {
+          $.get("/posts/" + pid + ".md")
+          .done( function(res){
+            $("#markdown").append(show.makeHtml(res))
+            $("#breadcrumb").append($("h1").first().text())
+          })
+          .fail( function(err){
             $("#markdown").html(show.makeHtml(err))
-          }
           })
         }
       })
