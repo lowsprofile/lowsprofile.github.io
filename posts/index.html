@@ -94,8 +94,10 @@
         }
         var pid = getParameterByName('pid')
           , show = new showdown.Converter()
-          
-        if (pid == null){
+        
+        if(!pid){
+          $("#markdown").html(show.makeHtml("# a!"))
+        } else if (pid && pid == null){
           $("#markdown").html(show.makeHtml("# Not Found 404!"))
         } else {
           $.get("/posts/" + pid + ".md", function(res) {
