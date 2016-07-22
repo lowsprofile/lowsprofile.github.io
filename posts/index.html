@@ -96,15 +96,14 @@
           , show = new showdown.Converter()
         
         if (pid == null){
-          $("#markdown").html(show.makeHtml("# Not Found 404!"))
+          $(location).attr("href", "//lowsprofile.github.io")
         } else {
-          $.get("/posts/" + pid + ".md")
-          .done( function(res){
+          $.get("/posts/" + pid + ".md", function(res){
             $("#markdown").append(show.makeHtml(res))
             $("#breadcrumb").append($("h1").first().text())
           })
-          .fail( function(err){
-            $("#markdown").html(show.makeHtml(err))
+          .fail( function(){
+            $("#markdown").html(show.makeHtml("# Not Found 404!"))
           })
         }
       })
