@@ -1,6 +1,6 @@
 # 『アナタのコト』
 > ####『ずっと大好きだよ。今までも、これからも。』  
-> #### [ダウンロード](//drive.google.com/open?id=0B_CAtj3a1LEESEtMdWh4a2tvMXM)
+> [ダウンロード](//drive.google.com/open?id=0B_CAtj3a1LEESEtMdWh4a2tvMXM)
 -----------------------------------------------------
 
 > 聞いてよ、好きな人ができたんだ  
